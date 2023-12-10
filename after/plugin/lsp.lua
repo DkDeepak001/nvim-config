@@ -5,25 +5,6 @@ lsp.preset("recommended")
 -- Fix Undefined global 'vim'
 lsp.nvim_lua_ls()
 
-
-local cmp = require('cmp')
-cmp.setup({
- mapping = cmp_mappings
-
-})
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
-})
-
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
-
-
-
 lsp.set_preferences({
     suggest_lsp_servers = false,
     sign_icons = {
@@ -33,6 +14,7 @@ lsp.set_preferences({
         info = 'I'
     }
 })
+
 
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
