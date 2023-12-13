@@ -1,3 +1,15 @@
+require('telescope').setup{
+  defaults = {
+    mappings = {
+      i = {
+        ["<C-h>"] = "which_key"
+      }
+    },
+    file_ignore_patterns = {"node%_modules/.*", "package.lock.json","/assets/*",".svg","build","dist",".png",".ttf",".gif",".otf",".woff"} 
+  },
+}
+
+
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
 vim.keymap.set('n','<leader>sg',builtin.git_files,{})

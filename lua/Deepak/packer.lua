@@ -21,27 +21,37 @@ return require('packer').startup(function(use)
   branch = 'v3.x',
   requires = {
     --- Uncomment these if you want to manage LSP servers from neovim
-    -- {'williamboman/mason.nvim'},
+     -- {'williamboman/mason.nvim'},
     -- {'williamboman/mason-lspconfig.nvim'},
 
+    {'BurntSushi/ripgrep'},
+    {'nvim-lua/plenary.nvim'},
     -- LSP Support
     {'neovim/nvim-lspconfig'},
     {'williamboman/mason.nvim'},
-    {'williamboman/mason-lspconfig.nvim'},
+--  {'williamboman/mason-lspconfig.nvim'},
 
 -- Autocompletion
     {'hrsh7th/nvim-cmp'},
     {'hrsh7th/cmp-buffer'},
     {'hrsh7th/cmp-path'},
-    {'hrsh7th/cmp-cmdline'}
+    {'hrsh7th/cmp-cmdline'},
     {'saadparwaiz1/cmp_luasnip'},
     {'hrsh7th/cmp-nvim-lsp'},
     {'L3MON4D3/LuaSnip'},
+    { 'hrsh7th/cmp-nvim-lsp'},
+   {'hrsh7th/cmp-nvim-lsp-signature-help'},
       -- Snippets
       {'L3MON4D3/LuaSnip'},
       {'rafamadriz/friendly-snippets'},
   }
+
 }
+ use {
+    'prettier/vim-prettier',
+    run = 'yarn install --frozen-lockfile --production',
+    ft = {'javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'}
+  }
 use 'nvim-tree/nvim-tree.lua'
 use 'nvim-tree/nvim-web-devicons'
 use 'nvim-lualine/lualine.nvim'
