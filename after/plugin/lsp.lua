@@ -50,13 +50,12 @@ require('lspconfig').tsserver.setup({
 
   }
 })
-
---require('mason-lspconfig').setup({
-  --ensure_installed = {},
- -- handlers = {
-    --lsp.default_setup,
-  --},
---})
+require('mason-lspconfig').setup({
+  nsure_installed = {},
+  handlers = {
+    lsp.default_setup,
+  },
+})
 vim.diagnostic.config({
     virtual_text = true
 })
