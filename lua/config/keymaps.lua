@@ -4,6 +4,7 @@
 
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>bb", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle)
 vim.api.nvim_set_keymap("n", "<CR>", "i", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-z>", "<Cmd>undo<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-r>", "<Cmd>redo<CR>", { noremap = true, silent = true })
